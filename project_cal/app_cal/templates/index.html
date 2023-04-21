@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Compound Interest Calculator</title>
+  </head>
+  <body>
+    <h1>Compound Interest Calculator</h1>
+    <form method="POST">
+      {% csrf_token %}
+      <label for="principal">Principal:</label>
+      <input type="text" id="principal" name="principal" required><br><br>
+      <label for="time">Time (in years):</label>
+      <input type="text" id="time" name="time" required><br><br>
+      <label for="interest">Interest rate (in %):</label>
+      <input type="text" id="interest" name="interest" required><br><br>
+      <button type="submit">Calculate</button>
+    </form>
+    {% if interest %}
+      <p>The interest value is {{ interest }}</p>
+    {% endif %}
+  </body>
+</html>
